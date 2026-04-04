@@ -11,32 +11,13 @@
   </head>
   <body>
     <header class="hero">
-      <nav class="site-nav">
-        <div class="container">
-					<a class="brand" href="index.html"><img src="assets/img/3D SC.png" alt="SurvivalCraft Logo" class="brand-logo"></a>
-          <div class="lang-accordion">
-            <button class="lang-toggle" type="button" aria-expanded="false" aria-label="Vybrať jazyk"><span class="fi fi-sk"></span><span class="arrow">▼</span></button>
-            <div class="lang-options" aria-hidden="true">
-							<button class="lang-btn" data-lang="sk" type="button"><span class="fi fi-sk"></span> SK</button>
-							<button class="lang-btn" data-lang="cz" type="button"><span class="fi fi-cz"></span> CZ</button>
-            </div>
-          </div>
-          <button class="nav-toggle" aria-expanded="false" aria-label="Otvoriť menu" data-aria-sk="Otvoriť menu" data-aria-cz="Otevřít nabídku"><span class="hamburger"></span></button>
-          <ul class="nav-list">
-            <li><a class="nav-link" href="index.html" data-text-sk="Domov" data-text-cz="Domů">Domov</a></li>
-            <li><a class="nav-link" href="vip.html" data-text-sk="VIP" data-text-cz="VIP">VIP</a></li>
-            <li><a class="nav-link" href="team.html" data-text-sk="Tím" data-text-cz="Tým">Tím</a></li>
-            <li><a class="nav-link" href="votes.html" data-text-sk="Hlasovanie" data-text-cz="Hlasování">Hlasovanie</a></li>
-            <li><a class="nav-link" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Discord" data-text-cz="Discord">Discord</a></li>
-          </ul>
-        </div>
-      </nav>
+      <?php include __DIR__ . '/includes/navbar.php'; ?>
       <div class="container hero-inner">
         <div class="hero-text">
           <h1 data-text-sk="VIP - Survival-Craft" data-text-cz="VIP - Survival-Craft">VIP - Survival-Craft</h1>
           <p class="lead" data-text-sk="Podporte server a získajte výhody" data-text-cz="Podpořte server a získejte výhody">Podporte server a získajte výhody</p>
           <div class="hero-cta">
-            <a class="btn" href="index.html" data-text-sk="Späť na hlavnú" data-text-cz="Zpět na domovskou">Späť na hlavnú</a>
+            <a class="btn" href="index.php" data-text-sk="Späť na hlavnú" data-text-cz="Zpět na domovskou">Späť na hlavnú</a>
             <a class="btn ghost" href="#donate" data-text-sk="Darovanie" data-text-cz="Darování">Darovanie</a>
           </div>
         </div>
@@ -139,17 +120,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p data-text-sk="© Survival-Craft • Built with ❤️ for players" data-text-cz="© Survival-Craft • Vytvořeno s ❤️ pro hráče">© Survival-Craft • Built with ❤️ for players </p>
-        <div class="footer-contact">
-          <span data-text-sk="Kontakt:" data-text-cz="Kontakt:">Kontakt:</span>
-          <a class="btn small" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Discord" data-text-cz="Discord">Discord</a>
-          <a class="btn small ghost" href="feedback.html" data-text-sk="Spätná väzba" data-text-cz="Zpětná vazba">Spätná väzba</a>
-          <a class="btn small ghost" href="baltop.html" data-text-sk="Baltop" data-text-cz="Baltop">Baltop</a>
-        </div>
-      </div>
-    </footer>
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 
   </body>
 </html>

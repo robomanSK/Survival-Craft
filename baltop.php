@@ -21,7 +21,7 @@
         <tr><td>9</td><td>DejvidKol06</td><td>6003.135</td><td>6003.135</td></tr>
         <tr><td>10</td><td>roboman_SK</td><td>6000.0</td><td>6000.0</td></tr>
         </tbody></table>
-        <p><a href="index.html">Späť na domov</a></p>
+        <p><a href="index.php">Späť na domov</a></p>
     </main>
 </body>
 </html>

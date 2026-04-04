@@ -1,3 +1,60 @@
+<?php
+$teamMembers = [
+  [
+    'avatar' => '👑',
+    'name' => 'roboman_SK',
+    'role' => 'Zakladatel & Majitel',
+    'description' => 'Zakladatel serveru a veduci administracie. Rozhoduje o smerovani serveru.',
+    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+  ],
+  [
+    'avatar' => '⚔️',
+    'name' => 'Admin 2',
+    'role' => 'Senior Administrator',
+    'description' => 'Spravuje technicku cast serveru a riadi ostatnych admincov.',
+    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+  ],
+  [
+    'avatar' => '🛡️',
+    'name' => 'Admin 3',
+    'role' => 'Moderator',
+    'description' => 'Dozera na bezpecnost a poriadok na serveri.',
+    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+  ],
+  [
+    'avatar' => '🔧',
+    'name' => 'Admin 4',
+    'role' => 'Vyvojar',
+    'description' => 'Vyvija pluginy a zlepsuje technicku infrastrukturu serveru.',
+    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+  ],
+];
+
+require_once __DIR__ . '/includes/db.php';
+$pdo = getDbConnection();
+
+if ($pdo instanceof PDO) {
+  try {
+    $stmt = $pdo->query("SELECT p.username AS name, p.uuid AS uuid, p.primary_group AS role, '' AS description, '👤' AS avatar, 'https://discord.com' AS discord_url
+      FROM luckperms_players p
+      JOIN luckperms_groups g ON g.name = p.primary_group
+      LEFT JOIN (
+        SELECT name, MAX(CAST(SUBSTRING_INDEX(permission, '.', -1) AS UNSIGNED)) AS weight
+        FROM luckperms_group_permissions
+        WHERE permission LIKE 'weight.%'
+        GROUP BY name
+      ) gw ON gw.name = g.name
+      WHERE p.primary_group != 'default' AND p.primary_group != 'vip' AND p.primary_group != 'tiktoker' AND p.primary_group != 'yt'
+      ORDER BY COALESCE(gw.weight, 0) DESC, p.primary_group ASC, p.username ASC");
+    $rows = $stmt->fetchAll();
+    if (!empty($rows)) {
+      $teamMembers = $rows;
+    }
+  } catch (Throwable $e) {
+    // Keep static fallback when query/table is not available.
+  }
+}
+?>
 <!doctype html>
 <html lang="sk">
   <head>
@@ -11,32 +68,13 @@
   </head>
   <body>
     <header class="hero">
-      <nav class="site-nav">
-        <div class="container">
-					<a class="brand" href="index.html"><img src="assets/img/3D SC.png" alt="SurvivalCraft Logo" class="brand-logo"></a>
-          <div class="lang-accordion">
-            <button class="lang-toggle" type="button" aria-expanded="false" aria-label="Vybrať jazyk"><span class="fi fi-sk"></span><span class="arrow">▼</span></button>
-            <div class="lang-options" aria-hidden="true">
-							<button class="lang-btn" data-lang="sk" type="button"><span class="fi fi-sk"></span> SK</button>
-							<button class="lang-btn" data-lang="cz" type="button"><span class="fi fi-cz"></span> CZ</button>
-            </div>
-          </div>
-          <button class="nav-toggle" aria-expanded="false" aria-label="Otvoriť menu" data-aria-sk="Otvoriť menu" data-aria-cz="Otevřít nabídku"><span class="hamburger"></span></button>
-          <ul class="nav-list">
-            <li><a class="nav-link" href="index.html" data-text-sk="Domov" data-text-cz="Domů">Domov</a></li>
-            <li><a class="nav-link" href="vip.html" data-text-sk="VIP" data-text-cz="VIP">VIP</a></li>
-            <li><a class="nav-link" href="team.html" data-text-sk="Tím" data-text-cz="Tým">Tím</a></li>
-            <li><a class="nav-link" href="votes.html" data-text-sk="Hlasovanie" data-text-cz="Hlasování">Hlasovanie</a></li>
-            <li><a class="nav-link" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Discord" data-text-cz="Discord">Discord</a></li>
-          </ul>
-        </div>
-      </nav>
+      <?php include __DIR__ . '/includes/navbar.php'; ?>
       <div class="container hero-inner">
         <div class="hero-text">
           <h1 data-text-sk="Admin Tím" data-text-cz="Admin Tým">Admin Tím</h1>
           <p class="lead" data-text-sk="Stretnite náš tím správcov serveru" data-text-cz="Poznamenejte si náš tým správců serveru">Stretnite náš tím správcov serveru</p>
           <div class="hero-cta">
-            <a class="btn" href="index.html" data-text-sk="Späť na hlavnú" data-text-cz="Zpět na domovskou">Späť na hlavnú</a>
+            <a class="btn" href="index.php" data-text-sk="Späť na hlavnú" data-text-cz="Zpět na domovskou">Späť na hlavnú</a>
             <a class="btn ghost" href="#team" data-text-sk="Pozrieť tím" data-text-cz="Zobrazit tým">Pozrieť tím</a>
           </div>
         </div>
@@ -49,45 +87,34 @@
         <p class="intro" data-text-sk="Tímu ľudí, ktorí robia z Survival-Craft skvelý server." data-text-cz="Tým lidí, kteří dělají ze Survival-Craft skvělý server.">Tímu ľudí, ktorí robia z Survival-Craft skvelý server.</p>
 
         <div class="team-grid">
-          <div class="team-member">
-            <div class="member-avatar">👑</div>
-            <h3>Admin názov</h3>
-            <p class="role">Zakladateľ & Vedúci</p>
-            <p class="description">Zakladateľ serveru a vedúci administrácie. Rozhoduje o smerovaní serveru.</p>
-            <div class="socials">
-              <a href="https://discord.com" target="_blank" rel="noopener" class="social-link">Discord</a>
+          <?php foreach ($teamMembers as $member): ?>
+            <div class="team-member">
+              <div class="member-avatar">
+                <?php
+                $rawUuid = (string)($member['uuid'] ?? '');
+                $skinUuid = strtolower(preg_replace('/[^a-f0-9]/i', '', $rawUuid));
+                ?>
+                <?php if ($skinUuid !== ''): ?>
+                  <img
+                    src="https://mc-heads.net/avatar/<?php echo htmlspecialchars($skinUuid); ?>/96"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://crafatar.com/avatars/<?php echo htmlspecialchars($skinUuid); ?>?size=96&overlay';return;} this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+                  />
+                  <span class="avatar-fallback" style="display:none;"><?php echo htmlspecialchars((string)($member['avatar'] ?? '👤')); ?></span>
+                <?php else: ?>
+                  <?php echo htmlspecialchars((string)($member['avatar'] ?? '👤')); ?>
+                <?php endif; ?>
+              </div>
+              <h3><?php echo htmlspecialchars((string)($member['name'] ?? 'Admin')); ?></h3>
+              <p class="role"><?php echo htmlspecialchars((string)($member['role'] ?? 'Role')); ?></p>
+              <p class="description"><?php echo htmlspecialchars((string)($member['description'] ?? '')); ?></p>
+              <div class="socials">
+                <a href="<?php echo htmlspecialchars((string)($member['discord_url'] ?? 'https://discord.com')); ?>" target="_blank" rel="noopener" class="social-link">Discord</a>
+              </div>
             </div>
-          </div>
-
-          <div class="team-member">
-            <div class="member-avatar">⚔️</div>
-            <h3>Admin 2</h3>
-            <p class="role">Senior Administrator</p>
-            <p class="description">Spravuje technickú časť serveru a riadi ostatných admincov.</p>
-            <div class="socials">
-              <a href="https://discord.com" target="_blank" rel="noopener" class="social-link">Discord</a>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="member-avatar">🛡️</div>
-            <h3>Admin 3</h3>
-            <p class="role">Moderátor</p>
-            <p class="description">Dozerá na bezpečnosť a poriadok na serveri.</p>
-            <div class="socials">
-              <a href="https://discord.com" target="_blank" rel="noopener" class="social-link">Discord</a>
-            </div>
-          </div>
-
-          <div class="team-member">
-            <div class="member-avatar">🔧</div>
-            <h3>Admin 4</h3>
-            <p class="role">Vývojár</p>
-            <p class="description">Vyvíja pluginy a zlepšuje technickú infraštruktúru serveru.</p>
-            <div class="socials">
-              <a href="https://discord.com" target="_blank" rel="noopener" class="social-link">Discord</a>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
       </section>
 
@@ -99,17 +126,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p data-text-sk="© Survival-Craft • Built with ❤️ for players" data-text-cz="© Survival-Craft • Vytvořeno s ❤️ pro hráče">© Survival-Craft • Built with ❤️ for players </p>
-        <div class="footer-contact">
-          <span data-text-sk="Kontakt:" data-text-cz="Kontakt:">Kontakt:</span>
-          <a class="btn small" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Discord" data-text-cz="Discord">Discord</a>
-          <a class="btn small ghost" href="feedback.html" data-text-sk="Spätná väzba" data-text-cz="Zpětná vazba">Spätná väzba</a>
-          <a class="btn small ghost" href="baltop.html" data-text-sk="Baltop" data-text-cz="Baltop">Baltop</a>
-        </div>
-      </div>
-    </footer>
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 
   </body>
 </html>

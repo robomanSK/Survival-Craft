@@ -111,7 +111,6 @@ if ($pdo instanceof PDO) {
               <p class="role"><?php echo htmlspecialchars((string)($member['role'] ?? 'Role')); ?></p>
               <p class="description"><?php echo htmlspecialchars((string)($member['description'] ?? '')); ?></p>
               <div class="socials">
-                <a href="<?php echo htmlspecialchars((string)($member['discord_url'] ?? 'https://discord.com')); ?>" target="_blank" rel="noopener" class="social-link">Discord</a>
               </div>
             </div>
           <?php endforeach; ?>

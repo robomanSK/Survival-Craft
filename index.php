@@ -13,6 +13,7 @@
         <script src="assets/js/script.js" defer></script>
 	</head>
 	<body>
+
 		<header class="hero">
 			<?php include __DIR__ . '/includes/navbar.php'; ?>
 			<div class="container hero-inner">

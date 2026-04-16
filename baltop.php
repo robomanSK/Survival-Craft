@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-    <main class="container" style="padding:2rem">
+        <!-- Page loader (standalone page that doesn't include navbar) -->
+        <div id="site-loader" class="site-loader" aria-hidden="false">
+            <div class="site-loader-inner">
+                <img src="assets/img/3D SC.png" alt="Survival-Craft" class="loader-logo" />
+                <div class="loader-spinner" role="status" aria-label="Načítavanie"></div>
+                <p class="loader-text">Načítavam...</p>
+            </div>
+        </div>
+
+        <main class="container" style="padding:2rem">
         <h1>Top 10 najbohatších hráčov</h1>
         <table><thead><tr><th>#</th><th>Hráč</th><th>Balance (raw)</th><th>Balance (num)</th></tr></thead><tbody>
         <tr><td>1</td><td>BenTime297</td><td>88495000.0</td><td>88495000.0</td></tr>

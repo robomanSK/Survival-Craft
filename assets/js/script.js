@@ -367,6 +367,28 @@
     }
 })();
 
+// Hide the page loader overlay when the full window has loaded (images, fonts, etc.)
+(function(){
+    function hideLoader(){
+        var l = document.getElementById('site-loader');
+        if(!l) return;
+        try{
+            l.classList.add('hidden');
+            l.setAttribute('aria-hidden','true');
+            // remove from DOM after transition
+            setTimeout(function(){ if(l && l.parentNode) l.parentNode.removeChild(l); }, 700);
+        }catch(e){}
+    }
+
+    if(document.readyState === 'complete'){
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader);
+        // also hide after a fallback timeout (in case load event doesn't fire)
+        setTimeout(hideLoader, 8000);
+    }
+})();
+
 function setupFeedbackForm(){
     var form = document.getElementById('feedback-form');
     if(!form) return;

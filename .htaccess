@@ -1,0 +1,2 @@
+# Custom error document for missing pages
+ErrorDocument 404 /404.php

@@ -246,3 +246,27 @@ th{background:rgba(255,255,255,0.02)}
 .copy-ip:hover{text-decoration:underline}
 .copy-tooltip{position:absolute;background:var(--card);color:var(--accent);padding:.4rem .6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.6);opacity:0;transform:translateY(6px);transition:opacity .16s ease, transform .16s ease;z-index:1200;white-space:nowrap;font-weight:700}
 .copy-tooltip.show{opacity:1;transform:translateY(0)}
+
+/* Page loader styles */
+.site-loader{
+	position:fixed;
+	inset:0;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background:linear-gradient(180deg, rgba(7,20,34,0.96), rgba(7,20,34,0.96));
+	z-index:2000;
+	transition:opacity .45s ease, visibility .45s ease;
+	opacity:1;
+	visibility:visible;
+}
+.site-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.site-loader-inner{text-align:center;color:var(--muted)}
+.loader-logo{width:80px;height:auto;margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto}
+.loader-spinner{width:56px;height:56px;border-radius:50%;border:5px solid rgba(255,255,255,0.06);border-top-color:var(--accent);animation:sc-loader-spin 1s linear infinite;margin:0 auto 0.6rem}
+@keyframes sc-loader-spin{to{transform:rotate(360deg)}}
+.loader-text{color:var(--muted);font-weight:700;letter-spacing:.02em}
+
+@media (prefers-reduced-motion: reduce){
+	.loader-spinner{animation:none}
+}

@@ -1,3 +1,11 @@
+<div id="site-loader" class="site-loader" aria-hidden="false">
+  <div class="site-loader-inner">
+    <img src="assets/img/3D SC.png" alt="Survival-Craft" class="loader-logo" />
+    <div class="loader-spinner" role="status" aria-label="Načítavanie"></div>
+    <p class="loader-text">Načítavam...</p>
+  </div>
+</div>
+
 <nav class="site-nav">
   <div class="container">
     <a class="brand" href="index.php"><img src="assets/img/3D SC.png" alt="SurvivalCraft Logo" class="brand-logo"></a>

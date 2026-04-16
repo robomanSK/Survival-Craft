@@ -1,2 +1,3 @@
 # Custom error document for missing pages
-ErrorDocument 404 /404.php
+# Use the full site-relative path so Apache can find the file when the site is in a subfolder
+ErrorDocument 404 /Survival-Craft/404.php

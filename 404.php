@@ -18,7 +18,7 @@ http_response_code(404);
       <h1 style="font-size:2.2rem;margin-bottom:0.6rem">404 — Stránka nenájdená</h1>
       <p style="color:var(--muted);margin-bottom:1.4rem">Prepáč, stránka ktorú hľadáš neexistuje alebo bola presunutá.</p>
       <p>
-        <a class="btn" href="/">Späť na domov</a>
+        <a class="btn" href="index.php">Späť na domov</a>
         <a class="btn ghost" href="/" style="margin-left:.6rem">Kontaktuj nás na Discord</a>
       </p>
       <section style="margin-top:2rem;color:var(--muted)">

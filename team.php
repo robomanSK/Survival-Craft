@@ -119,9 +119,8 @@ if ($pdo instanceof PDO) {
 
       <section class="connect">
         <h2 data-text-sk="Kontaktuj tím" data-text-cz="Kontaktuj tým">Kontaktuj tím</h2>
-        <p data-text-sk="Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo email." data-text-cz="Máš otázky nebo chceš nahlásit problém? Kontaktuj nás přes Stoat nebo e-mail.">Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo email.</p>
+        <p data-text-sk="Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo pomocou spätnej vazby." data-text-cz="Máš otázky nebo chceš nahlásit problém? Kontaktuj nás přes Stoat nebo pomocí zpětné vazby.">Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo pomocou spätnej vazby.</p>
         <p><a class="btn" href="https://stt.gg/hYkyHSFc" target="_blank" rel="noopener" data-text-sk="Prejsť na Stoat" data-text-cz="Jít na Stoat">Prejsť na Stoat</a></p>
-        <p style="color: var(--muted); margin-top: 1rem;" data-text-sk="Email: " data-text-cz="E-mail: ">Email: <a href="mailto:admin@survivalcraft.sk">admin@survivalcraft.sk</a></p>
       </section>
     </main>
 

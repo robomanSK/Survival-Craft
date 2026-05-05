@@ -44,7 +44,7 @@
               <li>Prednosť v rade (priority join)</li>
               <li>Väčší /nick color + prefix</li>
               <li>Malý chest / home bonus (1 extra home)</li>
-              <li>Vstup do VIP kanála na Discorde</li>
+              <li>Vstup do VIP kanála na Stoate</li>
             </ul>
             <a class="btn vip-btn" href="#donate" data-text-sk="Kúpiť VIP" data-text-cz="Koupit VIP" data-href-sk="#donate" data-href-cz="https://payment-cz.example.com/vip">Kúpiť VIP</a>
           </div>
@@ -81,7 +81,7 @@
               <li>Prednosť v rade (priority join)</li>
               <li>Farby a prefixý v chate</li>
               <li>Island vylepšenia a bonusy</li>
-              <li>Vstup do VIP kanála na Discorde</li>
+              <li>Vstup do VIP kanála na Stoate</li>
             </ul>
             <a class="btn vip-btn" href="#donate" data-text-sk="Kúpiť VIP" data-text-cz="Koupit VIP" data-href-sk="#donate" data-href-cz="https://payment-cz.example.com/vip">Kúpiť VIP</a>
           </div>

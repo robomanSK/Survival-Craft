@@ -19,7 +19,7 @@
 				<div class="hero-text">
 				<h1>Survival-Craft</h1>
 				<p class="lead" >Slovenský Minecraft server — Survival • Skyblock • Vanilla</p>
-				<p class="meta" >IP: <button id="copy-ip-text" class="copy-ip" data-ip="play.survival-craft.sk" aria-label="Kopírovať IP">play.survival-craft.sk</button> • Discord: <a class="meta-link" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener">discord.gg/vXQBZ7Z</a></p>
+				<p class="meta" >IP: <button id="copy-ip-text" class="copy-ip" data-ip="play.survival-craft.sk" aria-label="Kopírovať IP">play.survival-craft.sk</button> • Stoat: <a class="meta-link" href="https://stt.gg/hYkyHSFc" target="_blank" rel="noopener">stt.gg/hYkyHSFc</a></p>
 							<div class="hero-cta">
 								<a class="btn" href="#features" data-text-sk="Viac o serveri" data-text-cz="Více o serveru">Viac o serveri</a>
 
@@ -78,7 +78,7 @@
 					<li data-text-sk="Žiadny griefing ani stealing bez povolenia." data-text-cz="Žádný griefing ani krádež bez povolení.">Žiadny griefing ani stealing bez povolenia.</li>
 					<li data-text-sk="Respektuj ostatných hráčov a staff." data-text-cz="Respektuj ostatní hráče a staff.">Respektuj ostatných hráčov a staff.</li>
 					<li data-text-sk="Žiadne exploitovanie bugov — nahlás aj keď nájdeš." data-text-cz="Žádné zneužívání bugů — nahlaste i když najdete.">Žiadne exploitovanie bugov — nahlás aj keď nájdeš.</li>
-					<li data-text-sk="Dodržiavaj pravidlá Discordu a Minecraft servera." data-text-cz="Dodržuj pravidla Discordu a Minecraft serveru.">Dodržiavaj pravidlá Discordu a Minecraft servera.</li>
+					<li data-text-sk="Dodržiavaj pravidlá Stoatu a Minecraft servera." data-text-cz="Dodržuj pravidla Stoatu a Minecraft serveru.">Dodržiavaj pravidlá Stoatu a Minecraft servera.</li>
 				</ul>
 			</section>
 

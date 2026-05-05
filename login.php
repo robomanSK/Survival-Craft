@@ -62,7 +62,6 @@ $csrfToken = scCsrfToken('login');
           <button class="btn submit-btn" type="submit">Prihlásiť sa</button>
         </form>
 
-        <p class="small auth-note">Prvé seedované údaje sú <strong>admin</strong> / <strong>ChangeMe123!</strong>, ak ste ich ešte nezmenili.</p>
       </section>
     </main>
   </body>

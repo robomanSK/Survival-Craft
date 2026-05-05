@@ -8,7 +8,7 @@
         <li><a class="nav-link" href="team.php" data-text-sk="Tím" data-text-cz="Tým">Tím</a></li>
         <li><a class="nav-link" href="votes.php" data-text-sk="Hlasovanie" data-text-cz="Hlasování">Hlasovanie</a></li>
         <li><a class="nav-link" href="login.php" data-text-sk="Admin" data-text-cz="Admin">Admin</a></li>
-        <li><a class="nav-link" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Discord" data-text-cz="Discord">Discord</a></li>
+        <li><a class="nav-link" href="https://stt.gg/hYkyHSFc" target="_blank" rel="noopener" data-text-sk="Stoat" data-text-cz="Stoat">Stoat</a></li>
         <li class="nav-lang-item">
           <div class="lang-accordion">
             <button class="lang-toggle" type="button" aria-expanded="false" aria-label="Vybrať jazyk"><span class="fi fi-sk"></span><span class="arrow">▼</span></button>

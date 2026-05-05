@@ -5,28 +5,28 @@ $teamMembers = [
     'name' => 'roboman_SK',
     'role' => 'Zakladatel & Majitel',
     'description' => 'Zakladatel serveru a veduci administracie. Rozhoduje o smerovani serveru.',
-    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+    'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
     'avatar' => '⚔️',
     'name' => 'Admin 2',
     'role' => 'Senior Administrator',
     'description' => 'Spravuje technicku cast serveru a riadi ostatnych admincov.',
-    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+    'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
     'avatar' => '🛡️',
     'name' => 'Admin 3',
     'role' => 'Moderator',
     'description' => 'Dozera na bezpecnost a poriadok na serveri.',
-    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+    'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
     'avatar' => '🔧',
     'name' => 'Admin 4',
     'role' => 'Vyvojar',
     'description' => 'Vyvija pluginy a zlepsuje technicku infrastrukturu serveru.',
-    'discord_url' => 'https://discord.gg/vXQBZ7Z',
+    'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
 ];
 
@@ -35,7 +35,7 @@ $pdo = getDbConnection();
 
 if ($pdo instanceof PDO) {
   try {
-    $stmt = $pdo->query("SELECT p.username AS name, p.uuid AS uuid, p.primary_group AS role, '' AS description, '👤' AS avatar, 'https://discord.com' AS discord_url
+    $stmt = $pdo->query("SELECT p.username AS name, p.uuid AS uuid, p.primary_group AS role, '' AS description, '👤' AS avatar, 'https://stt.gg/hYkyHSFc' AS stoat_url
       FROM luckperms_players p
       JOIN luckperms_groups g ON g.name = p.primary_group
       LEFT JOIN (
@@ -119,8 +119,8 @@ if ($pdo instanceof PDO) {
 
       <section class="connect">
         <h2 data-text-sk="Kontaktuj tím" data-text-cz="Kontaktuj tým">Kontaktuj tím</h2>
-        <p data-text-sk="Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Discord alebo email." data-text-cz="Máš otázky nebo chceš nahlásit problém? Kontaktuj nás přes Discord nebo e-mail.">Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Discord alebo email.</p>
-        <p><a class="btn" href="https://discord.gg/vXQBZ7Z" target="_blank" rel="noopener" data-text-sk="Prejsť na Discord" data-text-cz="Jít na Discord">Prejsť na Discord</a></p>
+        <p data-text-sk="Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo email." data-text-cz="Máš otázky nebo chceš nahlásit problém? Kontaktuj nás přes Stoat nebo e-mail.">Máš otázky alebo chceš nahlásit problém? Kontaktuj nás cez Stoat alebo email.</p>
+        <p><a class="btn" href="https://stt.gg/hYkyHSFc" target="_blank" rel="noopener" data-text-sk="Prejsť na Stoat" data-text-cz="Jít na Stoat">Prejsť na Stoat</a></p>
         <p style="color: var(--muted); margin-top: 1rem;" data-text-sk="Email: " data-text-cz="E-mail: ">Email: <a href="mailto:admin@survivalcraft.sk">admin@survivalcraft.sk</a></p>
       </section>
     </main>

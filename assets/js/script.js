@@ -417,7 +417,7 @@ function setupFeedbackForm(){
         }
 
         try{ sessionStorage.setItem('feedback-name', (form.querySelector('#fb-name')||{value:''}).value || ''); }catch(e){}
-        window.location.href = 'thankyou.html';
+        form.submit();
     });
 }
 

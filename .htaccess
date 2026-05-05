@@ -1,0 +1,7 @@
+# Minimal .htaccess for Survival-Craft
+# Purpose: route 404 errors to the custom 404 page without causing 500 errors
+
+# Set ErrorDocument to site-root 404.php — many hosts set DocumentRoot to the project folder
+ErrorDocument 404 /404.php
+
+# No rewrite rules to avoid accidental conflicts on shared hosting

@@ -23,3 +23,11 @@
     </div>
   </div>
 </nav>
+
+<!-- Page Loader -->
+<div class="page-loader hidden" id="pageLoader">
+  <div>
+    <div class="loader-spinner"></div>
+    <p class="loader-text" data-text-sk="Načítavam..." data-text-cz="Načítávám...">Načítavam...</p>
+  </div>
+</div>

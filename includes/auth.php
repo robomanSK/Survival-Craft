@@ -102,7 +102,7 @@ function scAuthMeAllowedPrimaryGroups(): array
 {
     $configured = (string)(getenv('AUTHME_ALLOWED_PRIMARY_GROUPS') ?: getenv('AUTHME_ALLOWED_PRIMARY_GROUP') ?: 'majitel');
     $groups = array_map('trim', explode(',', $configured));
-    $groups = array_values(array_filter($groups, static fn(string $value): bool => $value !== ''));
+    $groups = array_values(array_filter($groups, function(string $value): bool { return $value !== ''; }));
 
     return $groups !== [] ? $groups : ['owner'];
 }

@@ -360,10 +360,38 @@
         applyLangToAll(stored === 'cz' ? 'cz' : 'sk');
     }
 
+    // Page Loader
+    function setupPageLoader(){
+        var loader = document.getElementById('pageLoader');
+        if(!loader) return;
+
+        // Show loader on page load start (if readyState is loading)
+        if(document.readyState === 'loading'){
+            loader.classList.remove('hidden');
+        }
+
+        // Hide loader when page fully loads
+        window.addEventListener('load', function(){
+            setTimeout(function(){
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
+        // Hide loader on click to any link (to show it while navigating)
+        document.addEventListener('click', function(e){
+            var link = e.target.closest('a');
+            if(link && (link.href.startsWith('http://') === false || link.href.includes(window.location.hostname))){
+                if(!link.target || link.target === '_self'){
+                    loader.classList.remove('hidden');
+                }
+            }
+        });
+    }
+
     if(document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', function(){ setupCopy(); setupNavToggle(); setupNavScroll(); setupModeSwitch(); setupPopularHover(); setupLanguageSwitcher(); setupSlideshow(); setupFeedbackForm(); });
+        document.addEventListener('DOMContentLoaded', function(){ setupCopy(); setupNavToggle(); setupNavScroll(); setupModeSwitch(); setupPopularHover(); setupLanguageSwitcher(); setupSlideshow(); setupFeedbackForm(); setupPageLoader(); });
     } else {
-        setupCopy(); setupNavToggle(); setupNavScroll(); setupModeSwitch(); setupPopularHover(); setupLanguageSwitcher(); setupSlideshow(); setupFeedbackForm();
+        setupCopy(); setupNavToggle(); setupNavScroll(); setupModeSwitch(); setupPopularHover(); setupLanguageSwitcher(); setupSlideshow(); setupFeedbackForm(); setupPageLoader();
     }
 })();
 

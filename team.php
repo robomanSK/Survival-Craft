@@ -5,6 +5,7 @@ $teamMembers = [
     'name' => 'roboman_SK',
     'role' => 'Zakladatel & Majitel',
     'description' => 'Zakladatel serveru a veduci administracie. Rozhoduje o smerovani serveru.',
+    'description_cz' => 'Zakladatel serveru a vedoucí administrace. Rozhoduje o směřování serveru.',
     'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
@@ -12,6 +13,7 @@ $teamMembers = [
     'name' => 'Admin 2',
     'role' => 'Senior Administrator',
     'description' => 'Spravuje technicku cast serveru a riadi ostatnych admincov.',
+    'description_cz' => 'Spravuje technickou část serveru a řídí ostatní adminy.',
     'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
@@ -19,6 +21,7 @@ $teamMembers = [
     'name' => 'Admin 3',
     'role' => 'Moderator',
     'description' => 'Dozera na bezpecnost a poriadok na serveri.',
+    'description_cz' => 'Dohlíží na bezpečnost a pořádek na serveru.',
     'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
   [
@@ -26,6 +29,7 @@ $teamMembers = [
     'name' => 'Admin 4',
     'role' => 'Vyvojar',
     'description' => 'Vyvija pluginy a zlepsuje technicku infrastrukturu serveru.',
+    'description_cz' => 'Vyvíjí pluginy a zlepšuje technickou infrastrukturu serveru.',
     'stoat_url' => 'https://stt.gg/hYkyHSFc',
   ],
 ];
@@ -109,7 +113,7 @@ if ($pdo instanceof PDO) {
               </div>
               <h3><?php echo htmlspecialchars((string)($member['name'] ?? 'Admin')); ?></h3>
               <p class="role"><?php echo htmlspecialchars((string)($member['role'] ?? 'Role')); ?></p>
-              <p class="description"><?php echo htmlspecialchars((string)($member['description'] ?? '')); ?></p>
+              <p class="description" data-text-sk="<?php echo htmlspecialchars((string)($member['description'] ?? '')); ?>" data-text-cz="<?php echo htmlspecialchars((string)($member['description_cz'] ?? '')); ?>"><?php echo htmlspecialchars((string)($member['description'] ?? '')); ?></p>
               <div class="socials">
               </div>
             </div>

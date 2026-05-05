@@ -1,0 +1,7 @@
+# Backup of previous .htaccess
+# Original content saved before changes.
+# Current minimal .htaccess may need adjustment depending on host DocumentRoot.
+
+# Previous content:
+# ErrorDocument 404 /Survival-Craft/404.php
+# ... (rewrites)
